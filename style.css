@@ -1,0 +1,1347 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #191614;
+  --paper: #f6f0e8;
+  --paper-soft: #fbf7f0;
+  --gold: #c7a46b;
+  --gold-dark: #9f7b47;
+  --glass: rgba(28, 23, 20, .46);
+  --white: #fff;
+  --shadow: 0 24px 80px rgba(0, 0, 0, .22);
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", sans-serif;
+  overflow-x: clip;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.welcome {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  overflow: hidden;
+  padding: 24px;
+  position: fixed;
+  transition: opacity .8s ease, visibility .8s ease;
+  z-index: 100;
+}
+
+.welcome.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.welcome-bg {
+  background:
+    linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .2)),
+    url("assets/photos/01-beso-close.jpeg") center/cover;
+  inset: 0;
+  position: absolute;
+}
+
+.welcome-panel {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  color: #fff;
+  max-width: 420px;
+  padding: 34px 26px;
+  position: relative;
+  text-align: center;
+  width: min(100%, 420px);
+}
+
+.welcome-panel p {
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.welcome-panel h1 {
+  font-family: "Cardo", serif;
+  font-size: clamp(48px, 12vw, 76px);
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: .84;
+  margin: 18px 0 24px;
+}
+
+.welcome-panel h1 span,
+.hero h2 span,
+footer h2 span {
+  color: var(--gold);
+  font-family: "Parisienne", cursive;
+  font-size: .88em;
+  font-weight: 400;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .36);
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font: 600 14px "Inter", sans-serif;
+  min-width: 150px;
+  padding: 14px 18px;
+  transition: background .25s ease, transform .25s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, .22);
+  transform: translateY(-2px);
+}
+
+.glass-btn.subtle {
+  background: rgba(255, 255, 255, .08);
+}
+
+.music-toggle {
+  align-items: center;
+  background: rgba(25, 22, 20, .72);
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 50%;
+  bottom: 18px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 22px;
+  height: 52px;
+  justify-content: center;
+  position: fixed;
+  right: 18px;
+  width: 52px;
+  z-index: 50;
+}
+
+.hero {
+  color: #fff;
+  display: grid;
+  min-height: 100svh;
+  overflow: hidden;
+  place-items: end center;
+  position: relative;
+  text-align: center;
+}
+
+.hero-media {
+  background:
+    linear-gradient(rgba(0, 0, 0, .12), rgba(0, 0, 0, .6)),
+    url("assets/photos/02-lago-faro.jpeg") center/cover;
+  inset: 0;
+  position: absolute;
+  transform: scale(1.02);
+}
+
+.hero-overlay {
+  background: linear-gradient(transparent 0 45%, rgba(0, 0, 0, .62));
+  inset: 0;
+  position: absolute;
+}
+
+.hero-content {
+  max-width: 760px;
+  padding: 0 22px 86px;
+  position: relative;
+  z-index: 2;
+}
+
+.date-pill {
+  border: 1px solid rgba(255, 255, 255, .58);
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .28em;
+  margin-bottom: 20px;
+  padding: 10px 18px;
+}
+
+.hero h2,
+.section h2,
+.rsvp h2,
+.closing h2,
+footer h2 {
+  font-family: "Cardo", serif;
+  font-size: clamp(46px, 10vw, 92px);
+  font-weight: 700;
+  line-height: .95;
+}
+
+.hero-content > p:last-child {
+  color: rgba(255, 255, 255, .9);
+  font-size: clamp(17px, 3.5vw, 24px);
+  line-height: 1.55;
+  margin: 22px auto 0;
+  max-width: 640px;
+}
+
+.scroll-cue {
+  border: 1px solid rgba(255, 255, 255, .4);
+  border-radius: 999px;
+  bottom: 24px;
+  color: #fff;
+  height: 38px;
+  left: 50%;
+  line-height: 36px;
+  position: absolute;
+  text-decoration: none;
+  transform: translateX(-50%);
+  width: 38px;
+  z-index: 3;
+}
+
+.section {
+  padding: 92px 22px;
+  text-align: center;
+}
+
+.story {
+  background: var(--paper);
+}
+
+.eyebrow {
+  color: var(--gold-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .28em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.lead {
+  color: rgba(25, 22, 20, .74);
+  font-size: clamp(17px, 3vw, 21px);
+  line-height: 1.75;
+  margin: 24px auto 0;
+  max-width: 740px;
+}
+
+.countdown-section {
+  background:
+    linear-gradient(rgba(25, 22, 20, .5), rgba(25, 22, 20, .5)),
+    url("assets/photos/05-cascada.jpeg") center/cover fixed;
+  color: #fff;
+  padding: 88px 22px;
+  text-align: center;
+}
+
+.countdown-section .eyebrow {
+  color: var(--gold);
+}
+
+.countdown {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 30px auto 0;
+  max-width: 760px;
+}
+
+.countdown div {
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 18px;
+  padding: 22px 10px;
+}
+
+.countdown strong {
+  display: block;
+  font-family: "Cardo", serif;
+  font-size: clamp(38px, 8vw, 64px);
+  line-height: 1;
+}
+
+.countdown small {
+  color: rgba(255, 255, 255, .76);
+  display: block;
+  font-size: 11px;
+  letter-spacing: .16em;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+.events {
+  background: var(--paper-soft);
+}
+
+.calendar-section {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(199, 164, 107, .11), transparent 34%),
+    var(--paper);
+  padding: 70px 20px 92px;
+  text-align: center;
+}
+
+.calendar-paper {
+  background:
+    linear-gradient(rgba(246, 240, 232, .88), rgba(246, 240, 232, .9)),
+    repeating-linear-gradient(90deg, rgba(159, 123, 71, .06) 0 1px, transparent 1px 18px);
+  box-shadow: 0 20px 60px rgba(68, 52, 38, .08);
+  margin: 0 auto;
+  max-width: 760px;
+  overflow: hidden;
+  padding: 30px clamp(18px, 4vw, 46px) 42px;
+  position: relative;
+}
+
+.calendar-paper::before {
+  background:
+    radial-gradient(circle at 18% 45%, rgba(159, 123, 71, .12) 0 9%, transparent 10%),
+    radial-gradient(circle at 46% 34%, rgba(159, 123, 71, .09) 0 13%, transparent 14%),
+    radial-gradient(circle at 75% 48%, rgba(159, 123, 71, .1) 0 10%, transparent 11%);
+  content: "";
+  inset: 0;
+  opacity: .72;
+  position: absolute;
+}
+
+.calendar-paper h2 {
+  color: var(--ink);
+  font-family: "Cardo", serif;
+  font-size: clamp(36px, 8vw, 64px);
+  font-weight: 400;
+  letter-spacing: .18em;
+  line-height: 1;
+  margin-bottom: 34px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.calendar-grid {
+  display: grid;
+  gap: 20px 12px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 620px;
+  position: relative;
+}
+
+.calendar-grid span {
+  align-items: center;
+  color: var(--ink);
+  display: flex;
+  font-size: 17px;
+  font-weight: 600;
+  height: 42px;
+  justify-content: center;
+  line-height: 1;
+  position: relative;
+}
+
+.calendar-grid .weekday {
+  color: rgba(25, 22, 20, .82);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.wedding-day {
+  color: #fff !important;
+  font-size: 18px !important;
+  z-index: 1;
+}
+
+.wedding-day::before,
+.wedding-day::after {
+  content: "♥";
+  font-size: 74px;
+  left: 50%;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.wedding-day::before {
+  color: rgba(199, 164, 107, .22);
+  font-size: 94px;
+}
+
+.wedding-day::after {
+  color: rgba(199, 164, 107, .72);
+}
+
+.calendar-note {
+  color: var(--ink);
+  font-family: "Cardo", serif;
+  font-size: clamp(20px, 4vw, 28px);
+  margin: 30px auto 86px;
+  max-width: 680px;
+}
+
+.calendar-button {
+  align-items: center;
+  border: 1px solid rgba(159, 123, 71, .78);
+  border-radius: 999px;
+  color: rgba(25, 22, 20, .76);
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 12px;
+  justify-content: center;
+  letter-spacing: .02em;
+  min-height: 52px;
+  padding: 14px 28px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.calendar-button::after {
+  content: "▣";
+  font-size: 20px;
+  line-height: 1;
+}
+
+.event-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 44px auto 0;
+  max-width: 1060px;
+}
+
+.event-grid.single {
+  grid-template-columns: minmax(0, 680px);
+  justify-content: center;
+}
+
+.event-card {
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(68, 52, 38, .1);
+  padding: 34px;
+  text-align: left;
+}
+
+.event-card.featured {
+  background: var(--ink);
+  color: #fff;
+}
+
+.event-number {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .32em;
+}
+
+.event-card h3 {
+  font-family: "Cardo", serif;
+  font-size: clamp(34px, 6vw, 54px);
+  margin: 16px 0 26px;
+}
+
+.event-card dl {
+  display: grid;
+  gap: 18px;
+}
+
+.event-card dt {
+  color: var(--gold-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.event-card.featured dt {
+  color: var(--gold);
+}
+
+.event-card dd {
+  color: inherit;
+  line-height: 1.55;
+}
+
+.event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.btn {
+  align-items: center;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  justify-content: center;
+  letter-spacing: .04em;
+  min-height: 44px;
+  padding: 12px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.outline {
+  background: transparent;
+  color: inherit;
+}
+
+.btn.outline-light {
+  background: transparent;
+  border-color: rgba(255, 255, 255, .7);
+  color: #fff;
+}
+
+.rsvp {
+  align-items: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, .52), rgba(0, 0, 0, .52)),
+    url("assets/photos/06-abrazo.jpeg") center/cover;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 520px;
+  padding: 76px 22px;
+  text-align: center;
+}
+
+.rsvp > div {
+  max-width: 760px;
+}
+
+.rsvp p:not(.eyebrow) {
+  color: rgba(255, 255, 255, .82);
+  line-height: 1.7;
+  margin: 18px auto 28px;
+}
+
+.playlist-section {
+  background: var(--paper);
+  overflow: hidden;
+  padding: 86px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.playlist-section::before {
+  background: linear-gradient(90deg, transparent, rgba(199, 164, 107, .45), transparent);
+  content: "";
+  height: 520px;
+  left: 50%;
+  position: absolute;
+  top: 28px;
+  transform: translateX(-50%) rotate(-8deg);
+  width: min(82vw, 720px);
+}
+
+.playlist-paper {
+  background:
+    linear-gradient(rgba(246, 240, 232, .9), rgba(246, 240, 232, .95)),
+    repeating-linear-gradient(90deg, rgba(159, 123, 71, .05) 0 1px, transparent 1px 16px);
+  box-shadow: 0 18px 70px rgba(68, 52, 38, .12);
+  margin: 0 auto;
+  max-width: 720px;
+  min-height: 520px;
+  overflow: hidden;
+  padding: 38px clamp(18px, 4vw, 48px) 28px;
+  position: relative;
+}
+
+.playlist-paper::before {
+  border: 1px solid rgba(159, 123, 71, .16);
+  border-radius: 50%;
+  color: rgba(159, 123, 71, .13);
+  content: "♪  ♫  ♬";
+  font-family: "Cardo", serif;
+  font-size: 72px;
+  height: 220px;
+  left: 50%;
+  letter-spacing: .18em;
+  line-height: 210px;
+  position: absolute;
+  top: 122px;
+  transform: translateX(-50%) rotate(-10deg);
+  width: 430px;
+}
+
+.playlist-paper > p {
+  color: rgba(25, 22, 20, .76);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(15px, 3vw, 18px);
+  font-weight: 700;
+  letter-spacing: .18em;
+  line-height: 1.55;
+  margin: 0 auto 108px;
+  max-width: 480px;
+  position: relative;
+}
+
+.song-suggest {
+  align-items: center;
+  background: #9d9089;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(68, 52, 38, .18);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: clamp(17px, 4vw, 22px);
+  font-weight: 500;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 38px;
+  min-height: 58px;
+  min-width: min(100%, 340px);
+  padding: 12px 34px;
+  position: relative;
+  z-index: 2;
+}
+
+.song-suggest span {
+  font-size: 18px;
+}
+
+.spotify-preview {
+  background: #344557;
+  border-radius: 6px;
+  box-shadow: 0 20px 52px rgba(25, 22, 20, .22);
+  color: #fff;
+  margin: 0 auto;
+  max-width: 560px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+}
+
+.spotify-top {
+  align-items: center;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 112px 1fr auto;
+  padding: 22px;
+}
+
+.spotify-top img {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  height: 112px;
+  object-fit: cover;
+  width: 112px;
+}
+
+.spotify-kicker {
+  color: rgba(255, 255, 255, .66);
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.spotify-top h3 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(19px, 4vw, 25px);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.spotify-top a {
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.spotify-logo {
+  align-self: start;
+  background: #1db954;
+  border-radius: 50%;
+  color: #1db954;
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.spotify-track {
+  align-items: center;
+  background: rgba(18, 28, 39, .34);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 22px 1fr auto;
+  padding: 13px 22px;
+}
+
+.spotify-track + .spotify-track {
+  border-top: 1px solid rgba(255, 255, 255, .06);
+}
+
+.spotify-track span,
+.spotify-track time,
+.spotify-track small {
+  color: rgba(255, 255, 255, .72);
+  font-size: 12px;
+}
+
+.spotify-track strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.gallery {
+  background: var(--paper);
+}
+
+.carousel {
+  margin: 44px auto 0;
+  max-width: 920px;
+  position: relative;
+}
+
+.carousel-frame {
+  aspect-ratio: 16 / 10;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  transform: scale(1.04);
+  transition: opacity .6s ease, transform .8s ease;
+  width: 100%;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-control {
+  align-items: center;
+  background: rgba(25, 22, 20, .72);
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-family: "Cardo", serif;
+  font-size: 42px;
+  height: 52px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  z-index: 3;
+}
+
+.carousel-control.prev {
+  left: 16px;
+}
+
+.carousel-control.next {
+  right: 16px;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.carousel-dots button {
+  background: transparent;
+  border: 1px solid var(--gold-dark);
+  border-radius: 999px;
+  cursor: pointer;
+  height: 11px;
+  width: 32px;
+}
+
+.carousel-dots button.active {
+  background: var(--gold-dark);
+}
+
+.dress-section {
+  background:
+    linear-gradient(rgba(251, 247, 240, .88), rgba(251, 247, 240, .96)),
+    url("assets/photos/08-auto.jpeg") center/cover;
+  position: relative;
+}
+
+.dress-card {
+  align-items: stretch;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .75fr);
+  margin: 0 auto;
+  max-width: 1080px;
+  text-align: left;
+}
+
+.dress-copy {
+  background: rgba(255, 255, 255, .82);
+  border: 1px solid rgba(159, 123, 71, .18);
+  box-shadow: 0 22px 70px rgba(68, 52, 38, .13);
+  padding: clamp(34px, 5vw, 58px);
+}
+
+.dress-copy h2 {
+  font-size: clamp(42px, 7vw, 76px);
+  margin-bottom: 24px;
+}
+
+.dress-copy p:not(.eyebrow) {
+  color: rgba(25, 22, 20, .74);
+  font-size: clamp(16px, 2.4vw, 19px);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.dress-notes {
+  display: grid;
+  gap: 14px;
+}
+
+.dress-notes div {
+  background: rgba(25, 22, 20, .86);
+  border: 1px solid rgba(255, 255, 255, .18);
+  color: #fff;
+  padding: 26px;
+}
+
+.dress-notes span {
+  color: var(--gold);
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .28em;
+  margin-bottom: 14px;
+}
+
+.dress-notes strong {
+  display: block;
+  font-family: "Cardo", serif;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.dress-notes p {
+  color: rgba(255, 255, 255, .76);
+  line-height: 1.6;
+}
+
+.adults-section {
+  background: var(--paper-soft);
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+.adults-card {
+  background:
+    linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .76)),
+    repeating-linear-gradient(0deg, rgba(159, 123, 71, .045) 0 1px, transparent 1px 17px);
+  border: 1px solid rgba(159, 123, 71, .2);
+  box-shadow: 0 22px 70px rgba(68, 52, 38, .1);
+  margin: 0 auto;
+  max-width: 780px;
+  padding: clamp(34px, 6vw, 58px);
+  position: relative;
+}
+
+.adults-card::before,
+.adults-card::after {
+  background: rgba(159, 123, 71, .42);
+  content: "";
+  height: 1px;
+  left: 10%;
+  position: absolute;
+  right: 10%;
+}
+
+.adults-card::before {
+  top: 22px;
+}
+
+.adults-card::after {
+  bottom: 22px;
+}
+
+.adults-card > span {
+  color: var(--gold-dark);
+  display: block;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.adults-card h2 {
+  font-size: clamp(34px, 6vw, 58px);
+  margin: 0 auto 22px;
+  max-width: 620px;
+}
+
+.adults-card p:not(.eyebrow) {
+  color: rgba(25, 22, 20, .72);
+  font-size: clamp(16px, 2.5vw, 19px);
+  line-height: 1.75;
+  margin: 0 auto 14px;
+  max-width: 650px;
+}
+
+.gift-section {
+  background:
+    radial-gradient(circle at 12% 22%, rgba(199, 164, 107, .12), transparent 28%),
+    radial-gradient(circle at 86% 72%, rgba(157, 144, 137, .12), transparent 26%),
+    var(--paper);
+  overflow: hidden;
+  position: relative;
+}
+
+.gift-card {
+  align-items: center;
+  display: grid;
+  gap: 42px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+  margin: 0 auto;
+  max-width: 1080px;
+  text-align: left;
+}
+
+.gift-copy {
+  background:
+    linear-gradient(rgba(251, 247, 240, .94), rgba(251, 247, 240, .96)),
+    repeating-linear-gradient(90deg, rgba(159, 123, 71, .05) 0 1px, transparent 1px 18px);
+  box-shadow: 0 20px 70px rgba(68, 52, 38, .1);
+  padding: clamp(32px, 5vw, 58px);
+  position: relative;
+}
+
+.gift-copy::after {
+  border: 1px solid rgba(159, 123, 71, .28);
+  content: "";
+  inset: 16px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.gift-copy h2 {
+  font-size: clamp(34px, 6vw, 58px);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.gift-copy p:not(.eyebrow) {
+  color: rgba(25, 22, 20, .72);
+  font-size: clamp(16px, 2.4vw, 19px);
+  line-height: 1.8;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.gift-copy span {
+  color: var(--gold-dark);
+  display: inline-block;
+  font-family: "Parisienne", cursive;
+  font-size: 32px;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.gift-frame {
+  background: #11100f;
+  box-shadow: 0 24px 70px rgba(25, 22, 20, .26);
+  color: #fff;
+  justify-self: center;
+  max-width: 380px;
+  padding: 18px;
+  position: relative;
+  transform: rotate(-2deg);
+  width: 100%;
+}
+
+.gift-frame::before {
+  border: 1px solid rgba(199, 164, 107, .62);
+  content: "";
+  inset: 10px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.gift-frame img {
+  aspect-ratio: 4 / 5;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gift-frame div {
+  background: linear-gradient(transparent, rgba(0, 0, 0, .82));
+  bottom: 18px;
+  left: 18px;
+  padding: 54px 18px 18px;
+  position: absolute;
+  right: 18px;
+  text-align: center;
+}
+
+.gift-frame strong {
+  display: block;
+  font-family: "Cardo", serif;
+  font-size: clamp(50px, 8vw, 76px);
+  line-height: .9;
+}
+
+.gift-frame small {
+  color: var(--gold);
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .24em;
+  margin-top: 12px;
+}
+
+.closing {
+  color: #fff;
+  min-height: 560px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.closing-bg {
+  background:
+    linear-gradient(rgba(0, 0, 0, .36), rgba(0, 0, 0, .56)),
+    url("assets/photos/03-mirador-lago.jpeg") center/cover;
+  inset: 0;
+  position: absolute;
+}
+
+.closing-content {
+  left: 50%;
+  max-width: 800px;
+  padding: 0 24px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.closing p {
+  color: rgba(255, 255, 255, .86);
+  font-size: clamp(18px, 4vw, 28px);
+  margin-bottom: 16px;
+}
+
+.closing h2 {
+  margin-bottom: 28px;
+}
+
+footer {
+  background: var(--ink);
+  color: #fff;
+  padding: 70px 22px;
+  text-align: center;
+}
+
+footer p {
+  color: rgba(255, 255, 255, .7);
+  margin-bottom: 16px;
+}
+
+footer h2 {
+  font-size: clamp(40px, 8vw, 72px);
+}
+
+footer a {
+  color: var(--gold);
+  display: inline-block;
+  font-weight: 700;
+  margin-top: 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.modal {
+  align-items: center;
+  background: rgba(0, 0, 0, .62);
+  display: none;
+  inset: 0;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 22px;
+  position: fixed;
+  z-index: 90;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-box {
+  background: var(--paper-soft);
+  box-shadow: var(--shadow);
+  max-width: 520px;
+  padding: 42px 28px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.modal-box h3 {
+  font-family: "Cardo", serif;
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+.modal-box p {
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.song-form {
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.song-form label {
+  color: rgba(25, 22, 20, .72);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.song-form input {
+  background: #fff;
+  border: 1px solid rgba(159, 123, 71, .26);
+  color: var(--ink);
+  font: 500 15px "Inter", sans-serif;
+  min-height: 48px;
+  padding: 12px 14px;
+  width: 100%;
+}
+
+.song-form input:focus {
+  border-color: var(--gold-dark);
+  outline: 2px solid rgba(199, 164, 107, .22);
+}
+
+.song-form .btn {
+  cursor: pointer;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.close {
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 34px;
+  position: absolute;
+  right: 16px;
+  top: 10px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .85s ease, transform .85s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 820px) {
+  .welcome-panel {
+    margin-top: auto;
+    margin-bottom: 38px;
+  }
+
+  .welcome-bg {
+    background-position: center top;
+  }
+
+  .section {
+    padding: 78px 18px;
+  }
+
+  .event-grid,
+  .dress-card,
+  .gift-card {
+    grid-template-columns: 1fr;
+  }
+
+  .dress-card,
+  .gift-card {
+    text-align: center;
+  }
+
+  .dress-copy,
+  .gift-copy {
+    text-align: center;
+  }
+
+  .dress-notes {
+    text-align: left;
+  }
+
+  .gift-frame {
+    max-width: 310px;
+    transform: rotate(1.5deg);
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+
+  .countdown div {
+    border-radius: 14px;
+    padding: 18px 6px;
+  }
+
+  .carousel-frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .playlist-section {
+    padding: 70px 16px;
+  }
+
+  .playlist-paper {
+    min-height: 0;
+    padding: 34px 18px 24px;
+  }
+
+  .playlist-paper::before {
+    font-size: 48px;
+    height: 180px;
+    line-height: 170px;
+    top: 126px;
+    width: 320px;
+  }
+
+  .playlist-paper > p {
+    letter-spacing: .12em;
+    margin-bottom: 96px;
+  }
+
+  .spotify-top {
+    grid-template-columns: 82px 1fr;
+    padding: 17px;
+  }
+
+  .spotify-top img {
+    height: 82px;
+    width: 82px;
+  }
+
+  .spotify-logo {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+
+  .spotify-track {
+    padding: 12px 17px;
+  }
+
+  .calendar-paper {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .calendar-grid {
+    gap: 12px 4px;
+  }
+
+  .calendar-grid span {
+    font-size: 14px;
+    height: 34px;
+  }
+
+  .calendar-grid .weekday {
+    font-size: 12px;
+  }
+
+  .wedding-day::before {
+    font-size: 76px;
+  }
+
+  .wedding-day::after {
+    font-size: 58px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome {
+    padding: 18px;
+  }
+
+  .welcome-actions {
+    flex-direction: column;
+  }
+
+  .glass-btn {
+    width: 100%;
+  }
+
+  .hero-content {
+    padding-bottom: 78px;
+  }
+
+  .countdown strong {
+    font-size: 34px;
+  }
+
+  .countdown small {
+    font-size: 9px;
+    letter-spacing: .08em;
+  }
+
+  .event-card {
+    padding: 28px 22px;
+  }
+}

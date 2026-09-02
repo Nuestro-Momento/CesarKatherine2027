@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11100f" />
+  <title>Invitación de matrimonio - Cesar y Katherine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="welcome" class="welcome">
+    <div class="welcome-bg"></div>
+    <div class="welcome-panel">
+      <p>Bienvenidos a la invitación de</p>
+      <h1>Cesar<br><span>&</span><br>Katherine</h1>
+      <div class="welcome-actions">
+        <button id="enterMusic" class="glass-btn">Entrar con música</button>
+        <button id="enterSilent" class="glass-btn subtle">Entrar | Enter</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="assets/audio/perfect-ed-sheeran.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicToggle" class="music-toggle" aria-label="Activar o pausar música">♪</button>
+
+  <header class="hero">
+    <div class="hero-media"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
+      <p class="date-pill">27 · 02 · 2027</p>
+      <h2>Cesar <span>&</span> Katherine</h2>
+      <p>Hay momentos que no se explican: se viven, se brindan y se recuerdan para siempre.</p>
+    </div>
+    <a href="#story" class="scroll-cue" aria-label="Bajar">↓</a>
+  </header>
+
+  <main>
+    <section id="story" class="story section reveal">
+      <p class="eyebrow">Nuestra historia</p>
+      <h2>Un día para celebrar el amor</h2>
+      <p class="lead">Nos emociona invitarte a compartir este capítulo con nosotros. Entre rutas, montañas, risas y abrazos, hemos construido una historia que hoy queremos celebrar junto a quienes más queremos.</p>
+    </section>
+
+    <section class="countdown-section reveal">
+      <p class="eyebrow">Faltan</p>
+      <div id="countdown" class="countdown" aria-live="polite"></div>
+    </section>
+
+    <section class="calendar-section reveal" aria-labelledby="calendar-title">
+      <div class="calendar-paper">
+        <h2 id="calendar-title">Febrero 2027</h2>
+        <div class="calendar-grid" aria-label="Calendario de febrero de 2027">
+          <span class="weekday">Lun</span>
+          <span class="weekday">Mar</span>
+          <span class="weekday">Mié</span>
+          <span class="weekday">Jue</span>
+          <span class="weekday">Vie</span>
+          <span class="weekday">Sáb</span>
+          <span class="weekday">Dom</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>7</span>
+          <span>8</span>
+          <span>9</span>
+          <span>10</span>
+          <span>11</span>
+          <span>12</span>
+          <span>13</span>
+          <span>14</span>
+          <span>15</span>
+          <span>16</span>
+          <span>17</span>
+          <span>18</span>
+          <span>19</span>
+          <span>20</span>
+          <span>21</span>
+          <span>22</span>
+          <span>23</span>
+          <span>24</span>
+          <span>25</span>
+          <span>26</span>
+          <span class="wedding-day" aria-label="Sábado 27 de febrero, día del matrimonio">27</span>
+          <span>28</span>
+        </div>
+      </div>
+      <p class="calendar-note">¡Sé puntual, no te pierdas ni un instante!</p>
+      <a class="calendar-button" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Matrimonio%20Cesar%20y%20Katherine&amp;dates=20270227T190000Z/20270228T030000Z&amp;details=Celebracion%20del%20matrimonio%20de%20Cesar%20y%20Katherine&amp;location=Black%20Forest%20Los%20Angeles%2C%20Chile" target="_blank" rel="noopener nofollow">¡Agendar evento en calendario!</a>
+    </section>
+
+    <section class="events section reveal">
+      <p class="eyebrow">Dónde y cuándo</p>
+      <h2>Todo será en un solo lugar</h2>
+
+      <div class="event-grid single">
+        <article class="event-card featured">
+          <span class="event-number">01</span>
+          <h3>Matrimonio</h3>
+          <dl>
+            <div>
+              <dt>Día</dt>
+              <dd>Sábado 27 de febrero de 2027</dd>
+            </div>
+            <div>
+              <dt>Hora</dt>
+              <dd>16:00 hrs</dd>
+            </div>
+            <div>
+              <dt>Lugar</dt>
+              <dd>Black Forest Los Ángeles</dd>
+            </div>
+          </dl>
+          <div class="event-actions">
+            <a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&amp;destination=-37.419851,-72.4503352&amp;travelmode=driving">Cómo llegar</a>
+            <a class="btn outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Matrimonio%20Cesar%20y%20Katherine&amp;dates=20270227T190000Z/20270228T030000Z&amp;details=Celebracion%20del%20matrimonio%20de%20Cesar%20y%20Katherine&amp;location=Black%20Forest%20Los%20Angeles%2C%20Chile" target="_blank" rel="noopener noreferrer">Agendar</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="adults-section section reveal">
+      <div class="adults-card">
+        <span aria-hidden="true">♥</span>
+        <p class="eyebrow">Con cariño y respeto</p>
+        <h2>Celebración de noche solo para adultos</h2>
+        <p>Queremos que durante el día puedan acompañarnos en familia sin problema. Para la fiesta de la noche, hemos decidido celebrar este momento solo con adultos.</p>
+        <p>Agradecemos mucho su comprensión y esperamos que esto no les impida acompañarnos, brindar y disfrutar junto a nosotros.</p>
+      </div>
+    </section>
+
+    <section class="rsvp reveal">
+      <div>
+        <p class="eyebrow">Confirmación</p>
+        <h2>Tu presencia es nuestro mejor regalo</h2>
+        <p>Ayúdanos confirmando tu asistencia para preparar cada detalle.</p>
+        <a class="btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/56959548664?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20matrimonio%20de%20Cesar%20y%20Katherine%20%F0%9F%A4%8D">Confirmar asistencia</a>
+      </div>
+    </section>
+
+    <section class="playlist-section reveal" aria-labelledby="playlist-title">
+      <div class="playlist-paper">
+        <p id="playlist-title">Favor únete a nuestra lista de reproducción una vez te haya llegado esta invitación</p>
+        <button class="song-suggest" type="button" data-modal="musicModal" onclick="document.getElementById('musicModal').classList.add('active')">Sugerir canción <span aria-hidden="true">♥</span></button>
+
+        <div class="spotify-preview" aria-label="Playlist del matrimonio en Spotify">
+          <div class="spotify-top">
+            <img src="assets/photos/02-lago-faro.jpeg" alt="Cesar y Katherine junto al lago">
+            <div>
+              <span class="spotify-kicker">Playlist del matrimonio</span>
+              <h3>Cesar & Katherine 2027</h3>
+              <a target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/playlist/7dLIUESUkePwcJ59BTOwox">Abrir en Spotify</a>
+            </div>
+            <span class="spotify-logo" aria-hidden="true">●</span>
+          </div>
+          <div class="spotify-track">
+            <span>1</span>
+            <div>
+              <strong>Nuestra canción</strong>
+              <small>Agrega tu favorita para la fiesta</small>
+            </div>
+            <time>03:27</time>
+          </div>
+          <div class="spotify-track">
+            <span>2</span>
+            <div>
+              <strong>La que no puede faltar</strong>
+              <small>La playlist se completa con ustedes</small>
+            </div>
+            <time>04:16</time>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery section reveal">
+      <p class="eyebrow">Retratos</p>
+      <h2>Fotos para guardar</h2>
+      <p class="lead">Un pedacito de nuestras aventuras, de los lugares que recorrimos y de los momentos que nos trajeron hasta aquí.</p>
+
+      <div class="carousel" aria-label="Carrusel de fotos">
+        <button class="carousel-control prev" type="button" aria-label="Foto anterior">‹</button>
+        <div class="carousel-frame">
+          <img class="slide active" src="assets/photos/02-lago-faro.jpeg" alt="Cesar y Katherine junto al lago">
+          <img class="slide" src="assets/photos/01-beso-close.jpeg" alt="Katherine besando a Cesar">
+          <img class="slide" src="assets/photos/03-mirador-lago.jpeg" alt="Cesar y Katherine en un mirador">
+          <img class="slide" src="assets/photos/04-cumbre.jpeg" alt="Cesar y Katherine en la montaña">
+          <img class="slide" src="assets/photos/05-cascada.jpeg" alt="Cesar y Katherine junto a una cascada">
+          <img class="slide" src="assets/photos/06-abrazo.jpeg" alt="Cesar abrazando a Katherine">
+          <img class="slide" src="assets/photos/07-running.jpeg" alt="Cesar y Katherine después de correr">
+          <img class="slide" src="assets/photos/08-auto.jpeg" alt="Cesar y Katherine junto al auto">
+        </div>
+        <button class="carousel-control next" type="button" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"></div>
+      </div>
+    </section>
+
+    <section class="dress-section section reveal">
+      <div class="dress-card">
+        <div class="dress-copy">
+          <p class="eyebrow">Dress code</p>
+          <h2>Formal para celebrar</h2>
+          <p>Para la ceremonia y la celebración principal, los esperamos con vestimenta formal. Vengan con el estilo en que se sientan cómodos, lindos y listos para acompañarnos en este día tan especial.</p>
+          <p>Como también habrá piscina y un ambiente más relajado después, quienes quieran cambiarse o andar más ligeros de ropa pueden llevar una segunda opción en blanco.</p>
+        </div>
+        <div class="dress-notes" aria-label="Sugerencias de vestuario">
+          <div>
+            <span>01</span>
+            <strong>Principal</strong>
+            <p>Vestimenta formal para el matrimonio, con el color y estilo que prefieran.</p>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>Después</strong>
+            <p>Si quieren cambiarse para estar más cómodos o disfrutar la piscina, ideal que esa ropa sea blanca.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="regalos" class="gift-section section reveal">
+      <div class="gift-card">
+        <div class="gift-copy">
+          <p class="eyebrow">Regalos</p>
+          <h2>Lo más importante es compartir este día con ustedes</h2>
+          <p>Su cariño, su compañía y sus buenos deseos son el mejor regalo que podemos recibir en este comienzo.</p>
+          <p>Sin embargo, si desean colaborar con el inicio de nuestra nueva vida juntos, tendremos disponible una lluvia de sobres para dejar su aporte en un buzón especial el día de nuestra boda.</p>
+          <span>Con amor, Cesar & Katherine</span>
+        </div>
+        <div class="gift-frame" aria-hidden="true">
+          <img src="assets/photos/01-beso-close.jpeg" alt="">
+          <div>
+            <strong>C & K</strong>
+            <small>27 · 02 · 2027</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing reveal">
+      <div class="closing-bg"></div>
+      <div class="closing-content">
+        <p>Comparte tus fotos y videos con</p>
+        <h2>#cesarykatherine</h2>
+        <a class="btn outline-light" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/">Ver en Instagram</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Nos vemos para celebrar</p>
+    <h2>Cesar <span>&</span> Katherine</h2>
+    <a target="_blank" rel="noopener noreferrer" href="https://wa.me/56959548664?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20matrimonio%20de%20Cesar%20y%20Katherine%20%F0%9F%A4%8D">Confirmar asistencia</a>
+  </footer>
+
+  <div id="musicModal" class="modal">
+    <div class="modal-box">
+      <button class="close" type="button" aria-label="Cerrar">×</button>
+      <h3>Sugerir canción</h3>
+      <p>Queremos que la fiesta también tenga algo tuyo.</p>
+      <form id="songForm" class="song-form">
+        <label for="songName">Canción</label>
+        <input id="songName" name="song" type="text" placeholder="Nombre de la canción" required>
+
+        <label for="artistName">Artista</label>
+        <input id="artistName" name="artist" type="text" placeholder="Artista o grupo">
+
+        <label for="spotifySongLink">Link de Spotify</label>
+        <input id="spotifySongLink" name="spotify" type="url" placeholder="https://open.spotify.com/...">
+
+        <button class="btn" type="submit">Enviar sugerencia</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
