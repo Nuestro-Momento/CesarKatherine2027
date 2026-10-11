@@ -540,6 +540,39 @@ footer h2 {
   margin: 18px auto 28px;
 }
 
+.rsvp-deadline {
+  background: rgba(25, 22, 20, .88);
+  border-block: 1px solid var(--gold);
+  margin: 0 auto 28px;
+  max-width: 580px;
+  padding: 24px 20px;
+}
+
+.rsvp-deadline > span {
+  color: var(--gold);
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.rsvp-deadline > time {
+  color: #fff;
+  display: block;
+  font-family: "Cardo", serif;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.rsvp .rsvp-deadline p {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 14px auto 0;
+  max-width: 460px;
+}
+
 .playlist-section {
   background: var(--paper);
   overflow: hidden;
@@ -1089,6 +1122,17 @@ footer p {
 
 footer h2 {
   font-size: clamp(40px, 8vw, 72px);
+}
+
+footer .footer-deadline {
+  line-height: 1.6;
+  margin: 20px auto 0;
+  max-width: 460px;
+}
+
+.footer-deadline time {
+  color: #fff;
+  font-weight: 600;
 }
 
 footer a {
